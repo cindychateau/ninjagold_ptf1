@@ -10,7 +10,7 @@
 </head>
 <body>
 	<div class="container">
-		<h1>Tu puntuación: ORO</h1>
+		<h1>Tu puntuación: ${gold}</h1>
 		<div class="row">
 			<div class="col">
 				<h3>Granja</h3>
@@ -47,6 +47,16 @@
 		</div>
 		<div class="row">
 			<h2>Actividad</h2>
+			<c:forEach items="${activities}" var="activity">
+				<c:if test="${activity.contains('ganaste')}">
+					<p class="text-success">${activity}</p>
+				</c:if>
+				
+				<c:if test="${activity.contains('perdiste')}">
+					<p class="text-danger">${activity}</p>
+				</c:if>
+				
+			</c:forEach>
 		</div>
 	</div>
 </body>
